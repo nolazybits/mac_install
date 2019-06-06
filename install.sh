@@ -2,9 +2,6 @@
 
 printf "Installing your Mac please wait\n\n"
 
-printf "Installing XCode please wait\n\n"
-xcode-select --install
-
 # update the system
 # sudo softwareupdate -ia --verbose
 
