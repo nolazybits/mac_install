@@ -1,7 +1,7 @@
-# mac_install
 Install script for new MacOS
 
-Prerequisitis:
+# Prerequisitis  
 * XCode
 
-Install using `curl -o- https://raw.githubusercontent.com/nolazybits/mac_install/master/install.sh | bash`
+# Installation  
+`curl -o- https://raw.githubusercontent.com/nolazybits/mac_install/master/install.sh | bash`
