@@ -9,7 +9,7 @@ printf "Installing your Mac please wait\n\n"
 if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Update any existing homebrew recipes
