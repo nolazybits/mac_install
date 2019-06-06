@@ -146,7 +146,7 @@ brew cask cleanup
 printf "Installing apple store application, you will need to be logged in already\n\n"
 
 # install mas - install App Store app from command line
-if test ! $(which brew)
+if test ! $(which mas)
 then
   echo "  Installing MAS for you, tool to install "
   brew install mas
