@@ -1,6 +1,6 @@
 Install script for new MacOS
 
-# Prerequisitis  
+# Prerequisites  
 * XCode
 
 # Installation  
