@@ -161,6 +161,9 @@ mas install 1207744923
 # John background switcher
 mas install 907640277
 
+# Todoist
+mas install 585829637
+
 # Installing dofiles
 printf "Installing dotfiles\n\n"
 
