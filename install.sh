@@ -22,6 +22,8 @@ brew upgrade
 brew tap caskroom/versions
 
 # APPLICATIONS
+brew install zsh zsh-completions
+chsh -s /bin/zsh
 
 # alfred, replace search
 brew cask install alfred
