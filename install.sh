@@ -50,7 +50,7 @@ brew cask install docker-edge
 brew cask install dropbox
 
 # etcher - image burner
-brew cask install etcher
+brew cask install balenaetcher
 
 # flux - cooler warms as dark comes
 brew cask install flux
