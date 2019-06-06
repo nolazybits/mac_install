@@ -22,9 +22,6 @@ brew upgrade
 brew tap caskroom/versions
 
 # APPLICATIONS
-brew install zsh zsh-completions
-chsh -s /bin/zsh
-
 # alfred, replace search
 brew cask install alfred
 
@@ -129,6 +126,9 @@ brew install vim
 
 # wavebox messaging app aggregator
 brew cask install wavebox
+
+# zsh 
+brew install zsh zsh-completions
 
 # Remove brew cruft
 brew cleanup
