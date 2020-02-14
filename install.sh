@@ -124,6 +124,9 @@ brew cask install vlc
 # vim editor
 brew install vim
 
+# display management
+brew tap jakehilborn/jakehilborn && brew install displayplacer
+
 # wavebox messaging app aggregator
 brew cask install wavebox
 
