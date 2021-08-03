@@ -29,11 +29,8 @@ brew tap homebrew/cask-fonts
 # realpath needed for the dotfiles install
 brew install coreutils
 
-# required to download dotfiles etc
-brew install git
-
 # java cause it's always used
-brew isntall java
+brew install java
 
 # cause it's always used
 brew install python3
