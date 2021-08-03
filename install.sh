@@ -198,9 +198,6 @@ brew install zsh zsh-completions
 # Remove brew cruft
 brew cleanup
 
-# Remove cask cruft
-brew cask cleanup 
-
 # NOT INSTALLED AUTOMATICALLY BUT LISTED
 # send videos to Apple TV or chrome cast
 # brew install beamer
