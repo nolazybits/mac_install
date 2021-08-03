@@ -21,7 +21,7 @@ brew update
 brew upgrade
 
 # install the versions tap (beta/snapshot channel)
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
 # fonts
 brew tap homebrew/cask-fonts 
