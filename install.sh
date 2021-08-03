@@ -3,7 +3,7 @@
 printf "Installing your Mac please wait\n\n"
 
 # update the system
-# sudo softwareupdate -ia --verbose
+sudo softwareupdate -ia --verbose
 
 # Check that Homebrew is installed and install if not
 if test ! $(which brew)
@@ -11,6 +11,8 @@ then
   echo "  Installing Homebrew for you."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+# SYSTEM ----------------------------------------------------------------------
 
 # Update any existing homebrew recipes
 brew update
@@ -21,114 +23,177 @@ brew upgrade
 # install the versions tap (beta/snapshot channel)
 brew tap caskroom/versions
 
-# APPLICATIONS
-# alfred, replace search
-brew cask install alfred
-
-# android file transfer
-brew cask install android-file-transfer
-
-# canary email client
-brew cask install canary
-
-# install cake brew for the one fearing the terminal
-brew cask install cakebrew
-
-# charles web proxy
-brew cask install charles
+# fonts
+brew tap homebrew/cask-fonts 
 
 # realpath needed for the dotfiles install
 brew install coreutils
 
-# docker
-brew cask install docker-edge
+# required to download dotfiles etc
+brew install git
 
-# dropbox
-brew cask install dropbox
+# java cause it's always used
+brew isntall java
 
-# etcher - image burner
-brew cask install balenaetcher
+# cause it's always used
+brew install python3
 
-# flux - cooler warms as dark comes
-brew cask install flux
+read -p "Do you want to install system tools? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    # alfred, replace search
+    brew install alfred
 
-# gif maker
-brew cask install gifox
+    # android file transfer
+    brew install android-file-transfer
 
-# google drive auto backup
-brew cask install google-backup-and-sync
+    # properly remove all files of unsinstalled application
+    brew install appcleaner
 
-# google chrome browser
-brew cask install google-chrome
+    # etcher - image burner
+    brew install balenaetcher
 
-# insomnia rest client
-brew cask install insomnia
+    # install cake brew for the one fearing the terminal
+    brew install cakebrew
 
-# intelliJ IDE
-brew cask install intellij-idea
+    # disk space check
+    brew install disk-inventory-x
 
-# iterm2 terminal
-brew cask install iterm2
+    # flux - cooler warms as dark comes
+    brew install flux
 
-# keeweb password manager
-brew cask install keeweb
+    # iterm2 terminal
+    brew install iterm2
 
-# krita - photoshop like
-brew cask install krita
+    # screen recording
+    brew install kap
 
-# open office docs
-brew cask install libreoffice
+    # path finder explorer (replace finder)
+    brew install path-finder
 
-# nicer image viewer
-brew cask install lightgallery
+    # pdf read/write
+    brew install pdf-expert
 
-# install little-snitch, check connection out are authorised
-brew cask install little-snitch
+    # vpn
+    brew install protonvpn
 
-# media player
-brew cask install mpv
+    # install spectacle window manager
+    brew install rectangle
 
-# remove notification when screensharing
-brew cask install muzzle
+    # audio controller
+    brew install soundsource
 
-# path finder explorer (replace finder)
-brew cask install path-finder
+    # termhere in path finder or finder
+    brew install termhere
 
-# plex client
-brew cask install plex-media-player
+    # ssh platfrom
+    brew install termi
 
-# install spectacle window manager
-brew cask install spectacle
+    # remove notification when screensharing
+    brew install muzzle
 
-# spotify
-brew cask install spotify
+    # archives 
+    brew install the-unarchiver
 
-# steam
-brew cask install steam
+    # vim editor
+    brew install vim
 
-# termhere in path finder or finder
-brew cask install termhere
+    # office
+    brew install wpsoffice
 
-# archives 
-brew cask install the-unarchiver
+    # display management
+    brew tap jakehilborn/jakehilborn && brew install displayplacer
 
-# vs code
-brew cask install visual-studio-code
+fi
 
-# vivaldi-snapshot browser, just to have another browser in case
-brew cask install vivaldi-snapshot
 
-# vlc media player, just in case mpv doesn't read the video
-brew cask install vlc
+# DEVELOPMENT -----------------------------------------------------------------
+read -p "Do you want to install development tools? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    # clean git repo - https://rtyley.github.io/bfg-repo-cleaner/
+    brew install bfg
 
-# vim editor
-brew install vim
+    # charles web proxy
+    brew install charles
 
-# display management
-brew tap jakehilborn/jakehilborn && brew install displayplacer
+    # docker
+    brew install docker-edge
 
-# wavebox messaging app aggregator
-brew cask install wavebox
+    # insomnia rest client
+    brew install insomnia
+
+    # intelliJ IDE
+    brew install intellij-idea
+
+    # code merge
+    brew install meld
+
+    # vs code
+    brew install visual-studio-code
+fi
+
+# NETWORKING -----------------------------------------------------------------
+read -p "Do you want to install networking tools? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    # snif ip on network
+    brew install angry-ip-scanner
+
+    # install little-snitch, check connection out are authorised
+    brew install little-snitch
+
+    brew install zenmap
+fi
+
+# MEDIA -----------------------------------------------------------------
+read -p "Do you want to install all misc tools? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    # gif maker
+    brew install gifox
+
+    # ftp client
+    brew install cyberduck
+
+    # dropbox
+    brew install dropbox
+
+    # firefox 
+    brew install firefox
+
+    # google chrome browser
+    brew install google-chrome
+
+    # keeweb password manager
+    brew install keeweb
+
+    # Vector and image tools
+    brew install affinity-designer affinity-photo
+
+    # nicer image viewer
+    brew install lightgallery
+
+    # media player
+    brew install mpv
+
+    # plex client
+    brew install plex-media-player
+
+    # spotify
+    brew install spotify
+
+    # vlc media player, just in case mpv doesn't read the video
+    brew install vlc
+
+    # wavebox messaging app aggregator
+    brew install wavebox
+
+fi
 
 # zsh 
 brew install zsh zsh-completions
@@ -141,10 +206,18 @@ brew cask cleanup
 
 # NOT INSTALLED AUTOMATICALLY BUT LISTED
 # send videos to Apple TV or chrome cast
-# brew cask install beamer
-
-
-
+# brew install beamer
+# canary email client
+# brew install canary
+# flaoting window
+# brew install pennywise
+# brew install grammarly
+# brew install gyazo
+# video editing
+# brew install lightworks
+# brew install obs
+# brew install openshot-video-editor
+# brew install obs
 # MAS
 printf "Installing apple store application, you will need to be logged in already\n\n"
 
@@ -166,9 +239,6 @@ mas install 907640277
 
 # Hour - World Clock
 mas install 569089415
-
-# Todoist
-mas install 585829637
 
 # Installing dofiles
 printf "Installing dotfiles\n\n"
