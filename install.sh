@@ -85,7 +85,7 @@ then
     brew install termhere
 
     # ssh platfrom
-    brew install termi
+    brew install termius
 
     # remove notification when screensharing
     brew install muzzle
